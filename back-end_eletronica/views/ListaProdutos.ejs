@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <title>Lista de Produtos</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 mb-4>Lista de Produtos Cadastrados</h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Cód</th>
+                    <th scope="col">Nome do Produto</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col" class="text-end">Preço R$</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% eletronico.forEach(elet => { %>
+                    <tr>
+                        <th scope="row">
+                            <%=elet.id%>
+                        </th>
+                        <td>
+                            <%=elet.nome%>
+                        </td>
+                        <td>
+                            <%=elet.marca%>
+                        </td>
+                        <td class="text-end">
+                            <%=(elet.preco).toLocaleString('pt-br', {minimumFractionDigits: 2})%>&ensp;
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
